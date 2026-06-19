@@ -161,8 +161,37 @@
   }
 
   .theme-v2 .bg-card-accent .text-card-dark\/50,
-  .theme-v2 .bg-card-accent .text-card-dark\/60 {
-    color: rgb(46 45 32 / 0.65);
+  .theme-v2 .bg-card-accent .text-card-dark\/60,
+  .theme-v2 .bg-card-accent\/40 .text-card-dark\/50,
+  .theme-v2 .bg-card-accent\/40 .text-card-dark\/60,
+  .theme-v2 .bg-card-accent\/50 .text-card-dark\/50,
+  .theme-v2 .bg-card-accent\/50 .text-card-dark\/60,
+  .theme-v2 .bg-card-accent\/70 .text-card-dark\/50,
+  .theme-v2 .bg-card-accent\/70 .text-card-dark\/60,
+  .theme-v2 .bg-card-accent\/80 .text-card-dark\/50,
+  .theme-v2 .bg-card-accent\/80 .text-card-dark\/60 {
+    color: rgb(46 45 32 / 0.78);
+  }
+
+  .theme-v2 .bg-card-accent .text-card-dark\/70,
+  .theme-v2 .bg-card-accent .text-card-dark\/80,
+  .theme-v2 .bg-card-accent\/40 .text-card-dark\/70,
+  .theme-v2 .bg-card-accent\/40 .text-card-dark\/80,
+  .theme-v2 .bg-card-accent\/50 .text-card-dark\/70,
+  .theme-v2 .bg-card-accent\/50 .text-card-dark\/80,
+  .theme-v2 .bg-card-accent\/70 .text-card-dark\/70,
+  .theme-v2 .bg-card-accent\/70 .text-card-dark\/80,
+  .theme-v2 .bg-card-accent\/80 .text-card-dark\/70,
+  .theme-v2 .bg-card-accent\/80 .text-card-dark\/80 {
+    color: var(--ink);
+  }
+
+  .theme-v2 .bg-card-accent .border-card-dark\/10,
+  .theme-v2 .bg-card-accent\/40 .border-card-dark\/10,
+  .theme-v2 .bg-card-accent\/50 .border-card-dark\/10,
+  .theme-v2 .bg-card-accent\/70 .border-card-dark\/10,
+  .theme-v2 .bg-card-accent\/80 .border-card-dark\/10 {
+    border-color: rgb(46 45 32 / 0.14);
   }
 
   .theme-v2 .border-card-dark {
@@ -274,4 +303,23 @@
     background-color: #252419;
     color: var(--cream);
   }
+}
+
+.theme-v2 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  :is(
+    .text-card-dark\/50,
+    .text-card-dark\/60,
+    .text-card-dark\/70,
+    .text-card-dark\/80,
+    [class*="text-card-dark/50"],
+    [class*="text-card-dark/60"],
+    [class*="text-card-dark/70"],
+    [class*="text-card-dark/80"]
+  ) {
+  color: var(--ink) !important;
+}
+
+.theme-v2 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  :is(.text-card-dark\/50, [class*="text-card-dark/50"]) {
+  color: rgb(46 45 32 / 0.78) !important;
 }

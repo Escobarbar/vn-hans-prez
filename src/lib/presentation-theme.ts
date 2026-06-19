@@ -1,4 +1,4 @@
-export type PresentationTheme = "v1" | "v2";
+export type PresentationTheme = "v1" | "v2" | "v3" | "v4";
 
 export const themeColors = {
   v1: {
@@ -27,7 +27,7 @@ export const themeColors = {
     sand: "#D4A97E",
     cream: "#FFF3E7",
     ink: "#2E2D20",
-    chartBar: "#D5A368",
+    chartBar: "#FFF3E7",
     chartLine: "#E3BF8D",
     chartGrid: "rgba(255,243,231,0.12)",
     chartTick: "rgba(255,243,231,0.55)",
@@ -38,8 +38,53 @@ export const themeColors = {
     productGlowInsetOuter: "rgba(213,163,104,0.1)",
     calculatorMuted: "#3C3B32",
   },
+  v3: {
+    canvas: "#012C4E",
+    cardDark: "#011E36",
+    cardLight: "#013A5C",
+    cardAccent: "#EAD292",
+    goldenSoft: "#EAD292",
+    goldenDeep: "#D4BC7A",
+    beige: "#EAD292",
+    ink: "#012C4E",
+    chartBar: "#EAD292",
+    chartLine: "#F5E8C4",
+    chartGrid: "rgba(234,210,146,0.12)",
+    chartTick: "rgba(234,210,146,0.55)",
+    chartTickMuted: "rgba(234,210,146,0.35)",
+    productGlow: "rgba(234,210,146,0.38)",
+    productGlowOuter: "rgba(212,188,122,0.16)",
+    productGlowInset: "rgba(234,210,146,0.22)",
+    productGlowInsetOuter: "rgba(212,188,122,0.1)",
+    calculatorMuted: "#013A5C",
+  },
+  v4: {
+    canvas: "#000F18",
+    cardDark: "#032221",
+    cardLight: "#0B453A",
+    cardAccent: "#00DF81",
+    greenNeon: "#00DF81",
+    greenMeadow: "#2CC295",
+    greenDeep: "#03624C",
+    flashWhite: "#F1F7F6",
+    ink: "#000F18",
+    chartBar: "#00DF81",
+    chartLine: "#2CC295",
+    chartGrid: "rgba(0,223,129,0.12)",
+    chartTick: "rgba(241,247,246,0.55)",
+    chartTickMuted: "rgba(170,203,196,0.45)",
+    productGlow: "rgba(0,223,129,0.35)",
+    productGlowOuter: "rgba(44,194,149,0.15)",
+    productGlowInset: "rgba(0,223,129,0.2)",
+    productGlowInsetOuter: "rgba(44,194,149,0.08)",
+    calculatorMuted: "#06302B",
+  },
 } as const;
 
 export const getThemeColors = (theme: PresentationTheme) => themeColors[theme];
 
 export const v2GoldGradient = "linear-gradient(135deg, #E3BF8D 0%, #D5A368 100%)";
+
+export const v3BeigeGradient = "linear-gradient(135deg, #EAD292 0%, #D4BC7A 100%)";
+
+export const v4GreenGradient = "linear-gradient(135deg, #00DF81 0%, #2CC295 100%)";

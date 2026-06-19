@@ -28,10 +28,10 @@ export const VnLogo = ({
   className,
   priority = false,
 }: VnLogoProps) => {
-  const { isV2 } = usePresentationTheme();
+  const { isBrandedDark } = usePresentationTheme();
   const displayWidth = Math.round(width * cropScale);
   const displayHeight = Math.round(height * cropScale);
-  const src = isV2 ? "/assets/vn-logo-v2.png" : "/assets/vn-logo-transparent.png";
+  const src = isBrandedDark ? "/assets/vn-logo-v2.png" : "/assets/vn-logo-transparent.png";
 
   return (
     <span
@@ -50,7 +50,7 @@ export const VnLogo = ({
         priority={priority}
         className={cn(
           "h-auto max-w-full object-contain object-center",
-          !isV2 && variantClass[variant],
+          !isBrandedDark && variantClass[variant],
         )}
         style={{
           width: displayWidth,

@@ -9,6 +9,9 @@ export const usePresentationTheme = () => {
     theme,
     colors: getThemeColors(theme),
     isV2: theme === "v2",
+    isV3: theme === "v3",
+    isV4: theme === "v4",
+    isBrandedDark: theme === "v2" || theme === "v3" || theme === "v4",
   };
 };
 

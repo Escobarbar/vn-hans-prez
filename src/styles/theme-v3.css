@@ -1,0 +1,330 @@
+/* VN Presentation v3 — Deep Navy + Golden Beige */
+
+.theme-v3 {
+  --bg-canvas: #012c4e;
+  --card-dark: #011e36;
+  --card-light: #013a5c;
+  --golden-soft: #ead292;
+  --golden-deep: #d4bc7a;
+  --beige: #ead292;
+  --ink: #012c4e;
+  --beige-gradient: linear-gradient(135deg, #ead292 0%, #d4bc7a 100%);
+
+  --card-accent: #ead292;
+  --color-canvas: #012c4e;
+  --color-card-dark: #011e36;
+  --color-card-light: #013a5c;
+  --color-card-accent: #ead292;
+
+  color: var(--beige);
+  background: var(--bg-canvas);
+  color-scheme: dark;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.theme-v3 h1,
+.theme-v3 h2,
+.theme-v3 h3,
+.theme-v3 h4 {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.theme-v3 .scroller {
+  background:
+    radial-gradient(ellipse 55% 45% at 88% 12%, rgb(234 210 146 / 0.08), transparent 55%),
+    radial-gradient(ellipse 40% 40% at 8% 85%, rgb(234 210 146 / 0.05), transparent 50%),
+    var(--bg-canvas);
+}
+
+@layer utilities {
+  .theme-v3 .bg-canvas {
+    background-color: var(--bg-canvas);
+  }
+
+  .theme-v3 .bg-card-dark {
+    background-color: var(--card-dark);
+  }
+
+  .theme-v3 .bg-card-light {
+    background-color: var(--card-light);
+  }
+
+  .theme-v3 .bg-card-accent {
+    background: var(--beige-gradient);
+    background-color: var(--golden-soft);
+  }
+
+  .theme-v3 .bg-card-dark\/10 {
+    background-color: rgb(234 210 146 / 0.1);
+  }
+
+  .theme-v3 .bg-card-dark\/80 {
+    background-color: rgb(1 44 78 / 0.88);
+  }
+
+  .theme-v3 .bg-card-dark\/90 {
+    background-color: rgb(1 44 78 / 0.92);
+  }
+
+  .theme-v3 .bg-card-accent\/40 {
+    background: linear-gradient(135deg, rgb(234 210 146 / 0.62), rgb(212 188 122 / 0.52));
+    border: 1px solid rgb(234 210 146 / 0.42);
+    box-shadow: inset 0 1px 0 rgb(245 232 196 / 0.18);
+  }
+
+  .theme-v3 .bg-card-accent\/50 {
+    background: linear-gradient(135deg, rgb(234 210 146 / 0.38), rgb(212 188 122 / 0.3));
+  }
+
+  .theme-v3 .bg-card-accent\/70 {
+    background: linear-gradient(135deg, rgb(234 210 146 / 0.88), rgb(212 188 122 / 0.82));
+  }
+
+  .theme-v3 .bg-card-accent\/80 {
+    background: linear-gradient(135deg, rgb(234 210 146 / 0.94), rgb(212 188 122 / 0.9));
+  }
+
+  .theme-v3 .bg-card-light\/15 {
+    background-color: rgb(234 210 146 / 0.1);
+  }
+
+  .theme-v3 .text-card-dark {
+    color: var(--beige);
+  }
+
+  .theme-v3 .text-card-dark\/50 {
+    color: rgb(234 210 146 / 0.5);
+  }
+
+  .theme-v3 .text-card-dark\/60 {
+    color: rgb(234 210 146 / 0.6);
+  }
+
+  .theme-v3 .text-card-dark\/70 {
+    color: rgb(234 210 146 / 0.7);
+  }
+
+  .theme-v3 .text-card-dark\/80 {
+    color: rgb(234 210 146 / 0.8);
+  }
+
+  .theme-v3 .text-card-light {
+    color: var(--beige);
+  }
+
+  .theme-v3 .text-card-light\/40 {
+    color: rgb(234 210 146 / 0.62);
+  }
+
+  .theme-v3 .text-card-light\/50 {
+    color: rgb(234 210 146 / 0.72);
+  }
+
+  .theme-v3 .text-card-light\/60 {
+    color: rgb(234 210 146 / 0.78);
+  }
+
+  .theme-v3 .text-card-light\/70 {
+    color: rgb(234 210 146 / 0.85);
+  }
+
+  .theme-v3 .text-card-light\/75 {
+    color: rgb(234 210 146 / 0.88);
+  }
+
+  .theme-v3 .text-card-light\/80 {
+    color: rgb(234 210 146 / 0.92);
+  }
+
+  .theme-v3 .bg-card-dark .text-card-light\/40,
+  .theme-v3 .bg-card-dark .text-card-light\/50,
+  .theme-v3 .bg-card-dark .text-card-light\/60,
+  .theme-v3 .bg-card-dark .text-card-light\/70 {
+    color: rgb(234 210 146 / 0.82);
+  }
+
+  .theme-v3 .text-card-accent {
+    color: var(--golden-soft);
+  }
+
+  .theme-v3 .bg-card-accent .text-card-dark,
+  .theme-v3 .bg-card-accent.text-card-dark,
+  .theme-v3 .bg-card-accent\/40 .text-card-dark,
+  .theme-v3 .bg-card-accent\/50 .text-card-dark,
+  .theme-v3 .bg-card-accent\/70 .text-card-dark,
+  .theme-v3 .bg-card-accent\/80 .text-card-dark {
+    color: var(--ink);
+  }
+
+  .theme-v3 .bg-card-accent .text-card-dark\/50,
+  .theme-v3 .bg-card-accent .text-card-dark\/60,
+  .theme-v3 .bg-card-accent\/40 .text-card-dark\/50,
+  .theme-v3 .bg-card-accent\/40 .text-card-dark\/60,
+  .theme-v3 .bg-card-accent\/50 .text-card-dark\/50,
+  .theme-v3 .bg-card-accent\/50 .text-card-dark\/60,
+  .theme-v3 .bg-card-accent\/70 .text-card-dark\/50,
+  .theme-v3 .bg-card-accent\/70 .text-card-dark\/60,
+  .theme-v3 .bg-card-accent\/80 .text-card-dark\/50,
+  .theme-v3 .bg-card-accent\/80 .text-card-dark\/60 {
+    color: rgb(1 44 78 / 0.78);
+  }
+
+  .theme-v3 .bg-card-accent .text-card-dark\/70,
+  .theme-v3 .bg-card-accent .text-card-dark\/80,
+  .theme-v3 .bg-card-accent\/40 .text-card-dark\/70,
+  .theme-v3 .bg-card-accent\/40 .text-card-dark\/80,
+  .theme-v3 .bg-card-accent\/50 .text-card-dark\/70,
+  .theme-v3 .bg-card-accent\/50 .text-card-dark\/80,
+  .theme-v3 .bg-card-accent\/70 .text-card-dark\/70,
+  .theme-v3 .bg-card-accent\/70 .text-card-dark\/80,
+  .theme-v3 .bg-card-accent\/80 .text-card-dark\/70,
+  .theme-v3 .bg-card-accent\/80 .text-card-dark\/80 {
+    color: var(--ink);
+  }
+
+  .theme-v3 .bg-card-accent .text-card-dark\/30,
+  .theme-v3 .bg-card-accent\/40 .text-card-dark\/30,
+  .theme-v3 .bg-card-accent\/50 .text-card-dark\/30,
+  .theme-v3 .bg-card-accent\/70 .text-card-dark\/30,
+  .theme-v3 .bg-card-accent\/80 .text-card-dark\/30 {
+    color: rgb(1 44 78 / 0.52);
+  }
+
+  .theme-v3 .bg-card-accent .border-card-dark\/10,
+  .theme-v3 .bg-card-accent\/40 .border-card-dark\/10,
+  .theme-v3 .bg-card-accent\/50 .border-card-dark\/10,
+  .theme-v3 .bg-card-accent\/70 .border-card-dark\/10,
+  .theme-v3 .bg-card-accent\/80 .border-card-dark\/10 {
+    border-color: rgb(1 44 78 / 0.14);
+  }
+
+  .theme-v3 .border-card-dark {
+    border-color: var(--golden-deep);
+  }
+
+  .theme-v3 .border-card-dark\/10 {
+    border-color: rgb(234 210 146 / 0.14);
+  }
+
+  .theme-v3 .border-card-dark\/20 {
+    border-color: rgb(234 210 146 / 0.22);
+  }
+
+  .theme-v3 .border-card-light\/10 {
+    border-color: rgb(234 210 146 / 0.12);
+  }
+
+  .theme-v3 .border-card-light\/30 {
+    border-color: rgb(234 210 146 / 0.26);
+  }
+
+  .theme-v3 .border-card-accent {
+    border-color: var(--golden-deep);
+  }
+
+  .theme-v3 .border-white\/10 {
+    border-color: rgb(234 210 146 / 0.16);
+  }
+
+  .theme-v3 .from-card-dark {
+    --tw-gradient-from: var(--card-dark);
+  }
+
+  .theme-v3 .via-card-dark\/75 {
+    --tw-gradient-via: rgb(1 44 78 / 0.75);
+  }
+
+  .theme-v3 .to-card-dark\/20 {
+    --tw-gradient-to: rgb(1 44 78 / 0.2);
+  }
+
+  .theme-v3 .from-card-dark\/60 {
+    --tw-gradient-from: rgb(1 44 78 / 0.72);
+  }
+
+  .theme-v3 .accent-card-dark {
+    accent-color: var(--golden-deep);
+  }
+
+  .theme-v3 .hover\:bg-card-dark:hover {
+    background: var(--beige-gradient);
+  }
+
+  .theme-v3 .hover\:bg-card-accent\/50:hover {
+    background: linear-gradient(135deg, rgb(234 210 146 / 0.55), rgb(212 188 122 / 0.45));
+  }
+
+  .theme-v3 .hover\:bg-card-accent\/80:hover {
+    background: var(--beige-gradient);
+  }
+
+  .theme-v3 .hover\:text-card-light:hover {
+    color: var(--ink);
+  }
+
+  .theme-v3 button.bg-card-light {
+    background: var(--beige-gradient);
+    color: var(--ink);
+  }
+
+  .theme-v3 button.bg-card-light:hover {
+    background: linear-gradient(135deg, #f0dea8 0%, #dcc486 100%);
+  }
+
+  .theme-v3 .bg-card-dark.transition-all {
+    background: var(--beige-gradient);
+  }
+
+  .theme-v3 nav .bg-card-light {
+    background: var(--beige-gradient);
+  }
+
+  .theme-v3 nav .bg-white\/25 {
+    background-color: rgb(234 210 146 / 0.2);
+  }
+
+  .theme-v3 nav .hover\:bg-white\/40:hover {
+    background: linear-gradient(135deg, rgb(234 210 146 / 0.55), rgb(212 188 122 / 0.45));
+  }
+
+  .theme-v3 .hover\:bg-white\/10:hover {
+    background-color: rgb(234 210 146 / 0.1);
+  }
+
+  .theme-v3 .bg-white\/5 {
+    background-color: rgb(234 210 146 / 0.05);
+  }
+
+  .theme-v3 select.bg-card-light,
+  .theme-v3 .bg-card-accent select {
+    border-color: rgb(234 210 146 / 0.32);
+    background-color: #011e36;
+    color: var(--beige);
+  }
+
+  .theme-v3 select.bg-card-light option,
+  .theme-v3 .bg-card-accent select option {
+    background-color: #011e36;
+    color: var(--beige);
+  }
+}
+
+/* Accent surfaces: navy ink on gold (outside @layer so Tailwind cannot override) */
+.theme-v3 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  :is(
+    .text-card-dark\/50,
+    .text-card-dark\/60,
+    .text-card-dark\/70,
+    .text-card-dark\/80,
+    [class*="text-card-dark/50"],
+    [class*="text-card-dark/60"],
+    [class*="text-card-dark/70"],
+    [class*="text-card-dark/80"]
+  ) {
+  color: var(--ink) !important;
+}
+
+.theme-v3 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  :is(.text-card-dark\/50, [class*="text-card-dark/50"]) {
+  color: rgb(1 44 78 / 0.78) !important;
+}

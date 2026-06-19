@@ -1,0 +1,323 @@
+/* VN Presentation v4 — Rich Black + Caribbean Green */
+
+.theme-v4 {
+  --bg-canvas: #000f18;
+  --card-dark: #032221;
+  --card-light: #0b453a;
+  --green-neon: #00df81;
+  --green-meadow: #2cc295;
+  --green-deep: #03624c;
+  --flash-white: #f1f7f6;
+  --ink: #000f18;
+  --green-gradient: linear-gradient(135deg, #00df81 0%, #2cc295 100%);
+
+  --card-accent: #00df81;
+  --color-canvas: #000f18;
+  --color-card-dark: #032221;
+  --color-card-light: #0b453a;
+  --color-card-accent: #00df81;
+
+  color: var(--flash-white);
+  background: var(--bg-canvas);
+  color-scheme: dark;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+.theme-v4 h1,
+.theme-v4 h2,
+.theme-v4 h3,
+.theme-v4 h4 {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.theme-v4 .scroller {
+  background:
+    radial-gradient(ellipse 55% 45% at 88% 12%, rgb(0 223 129 / 0.1), transparent 55%),
+    radial-gradient(ellipse 40% 40% at 8% 85%, rgb(44 194 149 / 0.06), transparent 50%),
+    var(--bg-canvas);
+}
+
+@layer utilities {
+  .theme-v4 .bg-canvas {
+    background-color: var(--bg-canvas);
+  }
+
+  .theme-v4 .bg-card-dark {
+    background-color: var(--card-dark);
+  }
+
+  .theme-v4 .bg-card-light {
+    background-color: var(--card-light);
+  }
+
+  .theme-v4 .bg-card-accent {
+    background: var(--green-gradient);
+    background-color: var(--green-neon);
+  }
+
+  .theme-v4 .bg-card-dark\/10 {
+    background-color: rgb(0 223 129 / 0.1);
+  }
+
+  .theme-v4 .bg-card-dark\/80 {
+    background-color: rgb(0 15 24 / 0.88);
+  }
+
+  .theme-v4 .bg-card-dark\/90 {
+    background-color: rgb(0 15 24 / 0.92);
+  }
+
+  .theme-v4 .bg-card-accent\/40 {
+    background: linear-gradient(135deg, rgb(0 223 129 / 0.55), rgb(44 194 149 / 0.45));
+    border: 1px solid rgb(0 223 129 / 0.38);
+    box-shadow: inset 0 1px 0 rgb(241 247 246 / 0.12);
+  }
+
+  .theme-v4 .bg-card-accent\/50 {
+    background: linear-gradient(135deg, rgb(0 223 129 / 0.35), rgb(44 194 149 / 0.28));
+  }
+
+  .theme-v4 .bg-card-accent\/70 {
+    background: linear-gradient(135deg, rgb(0 223 129 / 0.88), rgb(44 194 149 / 0.82));
+  }
+
+  .theme-v4 .bg-card-accent\/80 {
+    background: linear-gradient(135deg, rgb(0 223 129 / 0.94), rgb(44 194 149 / 0.9));
+  }
+
+  .theme-v4 .bg-card-light\/15 {
+    background-color: rgb(0 223 129 / 0.08);
+  }
+
+  .theme-v4 .text-card-dark {
+    color: var(--flash-white);
+  }
+
+  .theme-v4 .text-card-dark\/50 {
+    color: rgb(241 247 246 / 0.5);
+  }
+
+  .theme-v4 .text-card-dark\/60 {
+    color: rgb(241 247 246 / 0.6);
+  }
+
+  .theme-v4 .text-card-dark\/70 {
+    color: rgb(241 247 246 / 0.7);
+  }
+
+  .theme-v4 .text-card-dark\/80 {
+    color: rgb(241 247 246 / 0.8);
+  }
+
+  .theme-v4 .text-card-light {
+    color: var(--flash-white);
+  }
+
+  .theme-v4 .text-card-light\/40 {
+    color: rgb(241 247 246 / 0.62);
+  }
+
+  .theme-v4 .text-card-light\/50 {
+    color: rgb(241 247 246 / 0.72);
+  }
+
+  .theme-v4 .text-card-light\/60 {
+    color: rgb(241 247 246 / 0.78);
+  }
+
+  .theme-v4 .text-card-light\/70 {
+    color: rgb(241 247 246 / 0.85);
+  }
+
+  .theme-v4 .text-card-light\/75 {
+    color: rgb(241 247 246 / 0.88);
+  }
+
+  .theme-v4 .text-card-light\/80 {
+    color: rgb(241 247 246 / 0.92);
+  }
+
+  .theme-v4 .bg-card-dark .text-card-light\/40,
+  .theme-v4 .bg-card-dark .text-card-light\/50,
+  .theme-v4 .bg-card-dark .text-card-light\/60,
+  .theme-v4 .bg-card-dark .text-card-light\/70 {
+    color: rgb(241 247 246 / 0.82);
+  }
+
+  .theme-v4 .text-card-accent {
+    color: var(--green-neon);
+  }
+
+  .theme-v4 .bg-card-accent .text-card-dark,
+  .theme-v4 .bg-card-accent.text-card-dark,
+  .theme-v4 .bg-card-accent\/40 .text-card-dark,
+  .theme-v4 .bg-card-accent\/50 .text-card-dark,
+  .theme-v4 .bg-card-accent\/70 .text-card-dark,
+  .theme-v4 .bg-card-accent\/80 .text-card-dark {
+    color: var(--ink);
+  }
+
+  .theme-v4 .bg-card-accent .text-card-dark\/50,
+  .theme-v4 .bg-card-accent .text-card-dark\/60,
+  .theme-v4 .bg-card-accent\/40 .text-card-dark\/50,
+  .theme-v4 .bg-card-accent\/40 .text-card-dark\/60,
+  .theme-v4 .bg-card-accent\/50 .text-card-dark\/50,
+  .theme-v4 .bg-card-accent\/50 .text-card-dark\/60,
+  .theme-v4 .bg-card-accent\/70 .text-card-dark\/50,
+  .theme-v4 .bg-card-accent\/70 .text-card-dark\/60,
+  .theme-v4 .bg-card-accent\/80 .text-card-dark\/50,
+  .theme-v4 .bg-card-accent\/80 .text-card-dark\/60 {
+    color: rgb(0 15 24 / 0.78);
+  }
+
+  .theme-v4 .bg-card-accent .text-card-dark\/70,
+  .theme-v4 .bg-card-accent .text-card-dark\/80,
+  .theme-v4 .bg-card-accent\/40 .text-card-dark\/70,
+  .theme-v4 .bg-card-accent\/40 .text-card-dark\/80,
+  .theme-v4 .bg-card-accent\/50 .text-card-dark\/70,
+  .theme-v4 .bg-card-accent\/50 .text-card-dark\/80,
+  .theme-v4 .bg-card-accent\/70 .text-card-dark\/70,
+  .theme-v4 .bg-card-accent\/70 .text-card-dark\/80,
+  .theme-v4 .bg-card-accent\/80 .text-card-dark\/70,
+  .theme-v4 .bg-card-accent\/80 .text-card-dark\/80 {
+    color: var(--ink);
+  }
+
+  .theme-v4 .bg-card-accent .border-card-dark\/10,
+  .theme-v4 .bg-card-accent\/40 .border-card-dark\/10,
+  .theme-v4 .bg-card-accent\/50 .border-card-dark\/10,
+  .theme-v4 .bg-card-accent\/70 .border-card-dark\/10,
+  .theme-v4 .bg-card-accent\/80 .border-card-dark\/10 {
+    border-color: rgb(0 15 24 / 0.14);
+  }
+
+  .theme-v4 .border-card-dark {
+    border-color: var(--green-meadow);
+  }
+
+  .theme-v4 .border-card-dark\/10 {
+    border-color: rgb(0 223 129 / 0.14);
+  }
+
+  .theme-v4 .border-card-dark\/20 {
+    border-color: rgb(0 223 129 / 0.22);
+  }
+
+  .theme-v4 .border-card-light\/10 {
+    border-color: rgb(241 247 246 / 0.1);
+  }
+
+  .theme-v4 .border-card-light\/30 {
+    border-color: rgb(241 247 246 / 0.22);
+  }
+
+  .theme-v4 .border-card-accent {
+    border-color: var(--green-meadow);
+  }
+
+  .theme-v4 .border-white\/10 {
+    border-color: rgb(0 223 129 / 0.16);
+  }
+
+  .theme-v4 .from-card-dark {
+    --tw-gradient-from: var(--card-dark);
+  }
+
+  .theme-v4 .via-card-dark\/75 {
+    --tw-gradient-via: rgb(0 15 24 / 0.75);
+  }
+
+  .theme-v4 .to-card-dark\/20 {
+    --tw-gradient-to: rgb(0 15 24 / 0.2);
+  }
+
+  .theme-v4 .from-card-dark\/60 {
+    --tw-gradient-from: rgb(0 15 24 / 0.72);
+  }
+
+  .theme-v4 .accent-card-dark {
+    accent-color: var(--green-meadow);
+  }
+
+  .theme-v4 .hover\:bg-card-dark:hover {
+    background: var(--green-gradient);
+  }
+
+  .theme-v4 .hover\:bg-card-accent\/50:hover {
+    background: linear-gradient(135deg, rgb(0 223 129 / 0.55), rgb(44 194 149 / 0.45));
+  }
+
+  .theme-v4 .hover\:bg-card-accent\/80:hover {
+    background: var(--green-gradient);
+  }
+
+  .theme-v4 .hover\:text-card-light:hover {
+    color: var(--ink);
+  }
+
+  .theme-v4 button.bg-card-light {
+    background: var(--green-gradient);
+    color: var(--ink);
+  }
+
+  .theme-v4 button.bg-card-light:hover {
+    background: linear-gradient(135deg, #1aed92 0%, #3dcea3 100%);
+  }
+
+  .theme-v4 .bg-card-dark.transition-all {
+    background: var(--green-gradient);
+  }
+
+  .theme-v4 nav .bg-card-light {
+    background: var(--green-gradient);
+  }
+
+  .theme-v4 nav .bg-white\/25 {
+    background-color: rgb(0 223 129 / 0.2);
+  }
+
+  .theme-v4 nav .hover\:bg-white\/40:hover {
+    background: linear-gradient(135deg, rgb(0 223 129 / 0.55), rgb(44 194 149 / 0.45));
+  }
+
+  .theme-v4 .hover\:bg-white\/10:hover {
+    background-color: rgb(0 223 129 / 0.1);
+  }
+
+  .theme-v4 .bg-white\/5 {
+    background-color: rgb(0 223 129 / 0.05);
+  }
+
+  .theme-v4 select.bg-card-light,
+  .theme-v4 .bg-card-accent select {
+    border-color: rgb(0 223 129 / 0.32);
+    background-color: #032221;
+    color: var(--flash-white);
+  }
+
+  .theme-v4 select.bg-card-light option,
+  .theme-v4 .bg-card-accent select option {
+    background-color: #032221;
+    color: var(--flash-white);
+  }
+}
+
+.theme-v4 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  :is(
+    .text-card-dark\/50,
+    .text-card-dark\/60,
+    .text-card-dark\/70,
+    .text-card-dark\/80,
+    [class*="text-card-dark/50"],
+    [class*="text-card-dark/60"],
+    [class*="text-card-dark/70"],
+    [class*="text-card-dark/80"]
+  ) {
+  color: var(--ink) !important;
+}
+
+.theme-v4 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  :is(.text-card-dark\/50, [class*="text-card-dark/50"]) {
+  color: rgb(0 15 24 / 0.78) !important;
+}

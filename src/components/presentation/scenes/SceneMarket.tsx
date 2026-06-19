@@ -1,9 +1,11 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { motion } from "motion/react";
 import {
   Bar,
   CartesianGrid,
+  Cell,
   ComposedChart,
   Line,
   ResponsiveContainer,
@@ -24,7 +26,7 @@ const { market } = content;
 
 export const SceneMarket = () => {
   const { isActive, exportInstant } = useSceneActive(1);
-  const { colors } = usePresentationTheme();
+  const { colors, theme } = usePresentationTheme();
 
   return (
     <BentoCard variant="light" className="flex h-full flex-col gap-3 overflow-y-auto md:gap-4">
@@ -60,18 +62,33 @@ export const SceneMarket = () => {
               <div className="text-sm font-semibold text-card-dark">{market.chartTitle}</div>
               <div className="flex items-center gap-3 text-xs text-card-dark/50">
                 <span className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-card-dark" />
+                  <span
+                    className="h-2 w-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: colors.chartBar }}
+                  />
                   {market.chartLegend.housing}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="h-0.5 w-4 bg-card-accent" />
+                  <span
+                    className="h-0.5 w-4 shrink-0 rounded-full"
+                    style={{ backgroundColor: colors.chartLine }}
+                  />
                   {market.chartLegend.index}
                 </span>
               </div>
             </div>
-            <div className="min-h-[160px] flex-1">
+            <div
+              className="market-chart min-h-[160px] flex-1"
+              style={
+                {
+                  "--chart-bar": colors.chartBar,
+                  "--chart-line": colors.chartLine,
+                } as CSSProperties
+              }
+            >
               <ResponsiveContainer width="100%" height="100%" minHeight={160}>
                 <ComposedChart
+                  key={theme}
                   data={[...market.chartData]}
                   margin={{ top: 8, right: 8, bottom: 4, left: -15 }}
                 >
@@ -102,15 +119,21 @@ export const SceneMarket = () => {
                     fill={colors.chartBar}
                     radius={[6, 6, 0, 0]}
                     maxBarSize={40}
+                    isAnimationActive={isActive && !exportInstant}
                     animationDuration={isActive && !exportInstant ? 1200 : 0}
-                  />
+                  >
+                    {market.chartData.map((entry) => (
+                      <Cell key={entry.year} fill={colors.chartBar} />
+                    ))}
+                  </Bar>
                   <Line
                     yAxisId="right"
                     type="monotone"
                     dataKey="baukostenIndex"
                     stroke={colors.chartLine}
                     strokeWidth={2.5}
-                    dot={{ r: 4, fill: colors.chartLine }}
+                    dot={{ r: 4, fill: colors.chartLine, stroke: colors.chartLine }}
+                    isAnimationActive={isActive && !exportInstant}
                     animationDuration={isActive && !exportInstant ? 1500 : 0}
                   />
                 </ComposedChart>

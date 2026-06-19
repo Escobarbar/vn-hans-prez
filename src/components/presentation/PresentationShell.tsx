@@ -80,7 +80,13 @@ export const PresentationShell = ({
         theme,
       }}
     >
-      <div className={cn(theme === "v2" && "theme-v2 min-h-full")}>
+      <div
+        className={cn(
+          theme === "v2" && "theme-v2 min-h-full",
+          theme === "v3" && "theme-v3 min-h-full",
+          theme === "v4" && "theme-v4 min-h-full",
+        )}
+      >
         {!hideChrome && <ProgressBar progress={nav.progress} />}
         {!hideChrome && <ThemeSwitcher />}
         {!hideChrome && <SceneLabel activeScene={nav.activeScene} theme={theme} />}

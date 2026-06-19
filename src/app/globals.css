@@ -93,3 +93,12 @@ body {
   width: 100%;
   max-width: none;
 }
+
+.market-chart .recharts-bar-rectangle path,
+.market-chart .recharts-bar .recharts-rectangle {
+  fill: var(--chart-bar) !important;
+}
+
+.market-chart .recharts-inactive-bar path {
+  fill: var(--chart-bar) !important;
+}

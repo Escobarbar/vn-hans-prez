@@ -21,7 +21,7 @@ export const SceneLabel = ({ activeScene, theme = "v1", className }: SceneLabelP
     <span className="mx-2 opacity-30">·</span>
     {SCENE_LABELS[activeScene]}
     <span className="mx-2 opacity-30">·</span>
-    <span className={theme === "v2" ? "text-card-accent" : "text-card-accent/90"}>
+    <span className={theme !== "v1" ? "text-card-accent" : "text-card-accent/90"}>
       {theme}
     </span>
   </div>
