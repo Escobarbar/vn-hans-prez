@@ -72,9 +72,9 @@ export const CommissionCalculator = () => {
                       }
                     }}
                     className={cn(
-                      "flex-1 rounded-xl py-2 text-xs font-bold transition-all",
+                      "flex-1 rounded-xl py-2 text-xs font-bold transition-colors",
                       level === l.level
-                        ? "bg-card-dark text-card-light"
+                        ? "bg-card-dark text-card-accent ring-2 ring-card-accent/40"
                         : "bg-card-accent text-card-dark hover:bg-card-accent/70",
                     )}
                   >
@@ -161,7 +161,7 @@ export const CommissionCalculator = () => {
                       type="button"
                       onClick={() => setTeamLevel(l.level)}
                       className={cn(
-                        "flex-1 rounded-xl py-2 text-xs font-bold transition-all",
+                        "flex-1 rounded-xl py-2 text-xs font-bold transition-colors",
                         teamLevel === l.level
                           ? "bg-card-accent text-card-dark"
                           : "text-card-dark hover:bg-card-accent/50",

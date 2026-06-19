@@ -321,3 +321,19 @@
   :is(.text-card-dark\/50, [class*="text-card-dark/50"]) {
   color: rgb(0 15 24 / 0.78) !important;
 }
+
+.theme-v4 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80).text-card-dark {
+  color: var(--ink) !important;
+}
+
+.theme-v4 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  svg[class*="text-card-dark"],
+.theme-v4 :is(.bg-card-accent, .bg-card-accent\/40, .bg-card-accent\/50, .bg-card-accent\/70, .bg-card-accent\/80)
+  svg.lucide {
+  color: var(--ink) !important;
+}
+
+.theme-v4 .vn-logo--v4 {
+  filter: brightness(0) saturate(100%) invert(96%) sepia(12%) saturate(748%) hue-rotate(112deg)
+    brightness(103%) contrast(101%);
+}
