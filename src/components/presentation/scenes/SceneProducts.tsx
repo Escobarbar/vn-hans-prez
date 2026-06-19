@@ -11,18 +11,18 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { content } from "@/lib/content/de";
 import { cn } from "@/lib/utils";
 import { useSceneActive } from "@/hooks/useSceneActive";
+import { usePresentationTheme } from "@/hooks/usePresentationTheme";
 
 const icons = [Home, Building2, Building, Tent];
 const { products } = content;
 
-const accentGlow =
-  "shadow-[0_0_28px_10px_rgba(212,231,245,0.45),0_0_56px_20px_rgba(212,231,245,0.2)]";
-const accentGlowHover =
-  "hover:shadow-[0_0_28px_10px_rgba(212,231,245,0.45),0_0_56px_20px_rgba(212,231,245,0.2)]";
-
 export const SceneProducts = () => {
   const { isActive } = useSceneActive(3);
+  const { colors } = usePresentationTheme();
   const [expanded, setExpanded] = useState<string | null>(null);
+
+  const productShadow = `0 0 28px 10px ${colors.productGlow}, 0 0 56px 20px ${colors.productGlowOuter}`;
+  const insetGlow = `inset 0 0 48px 12px ${colors.productGlowInset}, inset 0 0 96px 24px ${colors.productGlowInsetOuter}`;
 
   return (
     <BentoCard variant="light" className="flex h-full flex-col overflow-y-auto">
@@ -46,10 +46,14 @@ export const SceneProducts = () => {
                 layout
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={cn(
-                  "group rounded-[var(--radius-md)] transition-shadow duration-300 ease-out",
-                  isExpanded ? accentGlow : accentGlowHover,
-                )}
+                className="group rounded-[var(--radius-md)] transition-shadow duration-300 ease-out"
+                style={{ boxShadow: isExpanded ? productShadow : undefined }}
+                onMouseEnter={(e) => {
+                  if (!isExpanded) e.currentTarget.style.boxShadow = productShadow;
+                }}
+                onMouseLeave={(e) => {
+                  if (!isExpanded) e.currentTarget.style.boxShadow = "";
+                }}
               >
                 <BentoCard
                   variant="dark"
@@ -76,8 +80,7 @@ export const SceneProducts = () => {
                       isExpanded ? "opacity-100" : "opacity-0 group-hover:opacity-100",
                     )}
                     style={{
-                      boxShadow:
-                        "inset 0 0 48px 12px rgba(212, 231, 245, 0.28), inset 0 0 96px 24px rgba(212, 231, 245, 0.12)",
+                      boxShadow: insetGlow,
                     }}
                   />
 

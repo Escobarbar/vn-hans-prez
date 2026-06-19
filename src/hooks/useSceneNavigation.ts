@@ -33,9 +33,12 @@ export const useSceneNavigation = (
   const goPrev = useCallback(() => scrollToScene(activeScene - 1), [activeScene, scrollToScene]);
 
   useEffect(() => {
-    if (!exportMode) return;
-    scrollToScene(clampedInitial);
-  }, [clampedInitial, exportMode, scrollToScene]);
+    if (clampedInitial === 0) return;
+    const frame = requestAnimationFrame(() => {
+      scrollToScene(clampedInitial);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [clampedInitial, scrollToScene]);
 
   useEffect(() => {
     if (exportMode) return;

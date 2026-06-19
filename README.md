@@ -20,6 +20,8 @@ npm run dev
 
 Open [http://localhost:3010](http://localhost:3010).
 
+**v2 (dark + gold palette):** [http://localhost:3010/v2](http://localhost:3010/v2)
+
 ## Navigation
 
 - **Arrow keys** or **Space** — next scene

@@ -70,7 +70,7 @@ export const SceneAbout = () => {
         </div>
 
         <div className="flex min-h-[100px] items-center justify-center overflow-hidden py-2 lg:row-start-1">
-          <VnLogo width={200} height={72} cropScale={1.85} />
+          <VnLogo width={280} height={100} cropScale={1.2} />
         </div>
 
         <BlurFade delay={0.15} inView={isActive} className="lg:row-start-2 lg:flex lg:h-full">

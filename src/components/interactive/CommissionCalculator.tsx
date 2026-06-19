@@ -10,11 +10,13 @@ import { content } from "@/lib/content/de";
 import { cn, formatEuro } from "@/lib/utils";
 import { usePresentation } from "@/components/presentation/PresentationContext";
 import { exportTransition } from "@/lib/motion-export";
+import { usePresentationTheme } from "@/hooks/usePresentationTheme";
 
 const { earnings } = content;
 
 export const CommissionCalculator = () => {
   const { exportInstant } = usePresentation();
+  const { colors } = usePresentationTheme();
   const [level, setLevel] = useState(3);
   const [ownM2, setOwnM2] = useState(1000);
   const [teamPartners, setTeamPartners] = useState(3);
@@ -162,8 +164,13 @@ export const CommissionCalculator = () => {
                         "flex-1 rounded-xl py-2 text-xs font-bold transition-all",
                         teamLevel === l.level
                           ? "bg-card-accent text-card-dark"
-                          : "bg-[#ebf3f7] text-card-dark hover:bg-card-accent/50",
+                          : "text-card-dark hover:bg-card-accent/50",
                       )}
+                      style={
+                        teamLevel !== l.level
+                          ? { backgroundColor: colors.calculatorMuted }
+                          : undefined
+                      }
                     >
                       Stufe {l.level}
                     </button>

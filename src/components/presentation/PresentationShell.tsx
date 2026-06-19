@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { PresentationProvider } from "./PresentationContext";
 import { SceneLabel } from "./SceneLabel";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import { ProgressBar } from "./ProgressBar";
 import { SceneNavigator } from "./SceneNavigator";
 import { SceneCover } from "./scenes/SceneCover";
@@ -13,6 +14,8 @@ import { SceneCareer } from "./scenes/SceneCareer";
 import { SceneStructure } from "./scenes/SceneStructure";
 import { SceneEarnings } from "./scenes/SceneEarnings";
 import { useSceneNavigation } from "@/hooks/useSceneNavigation";
+import type { PresentationTheme } from "@/lib/presentation-theme";
+import { cn } from "@/lib/utils";
 
 const SCENES = [
   { id: "cover", Component: SceneCover },
@@ -25,19 +28,21 @@ const SCENES = [
 ] as const;
 
 type PresentationShellProps = {
+  theme?: PresentationTheme;
   exportMode?: boolean;
-  exportScene?: number;
+  initialScene?: number;
   hideChrome?: boolean;
 };
 
 export const PresentationShell = ({
+  theme = "v1",
   exportMode = false,
-  exportScene = 0,
+  initialScene = 0,
   hideChrome = false,
 }: PresentationShellProps) => {
   const nav = useSceneNavigation(SCENES.length, {
     exportMode,
-    initialScene: exportScene,
+    initialScene,
   });
 
   useEffect(() => {
@@ -72,29 +77,33 @@ export const PresentationShell = ({
         exportMode,
         exportInstant: exportMode,
         hideChrome,
+        theme,
       }}
     >
-      {!hideChrome && <ProgressBar progress={nav.progress} />}
-      {!hideChrome && <SceneLabel activeScene={nav.activeScene} />}
-      <div ref={nav.scrollerRef} className="scroller">
-        {SCENES.map(({ id, Component }, index) => (
-          <section
-            key={id}
-            data-scene={index}
-            className={index === 4 ? "scene-wrapper scene-wrapper--full" : "scene-wrapper"}
-            aria-label={nav.sceneLabels[index]}
-          >
-            <Component />
-          </section>
-        ))}
+      <div className={cn(theme === "v2" && "theme-v2 min-h-full")}>
+        {!hideChrome && <ProgressBar progress={nav.progress} />}
+        {!hideChrome && <ThemeSwitcher />}
+        {!hideChrome && <SceneLabel activeScene={nav.activeScene} theme={theme} />}
+        <div ref={nav.scrollerRef} className="scroller">
+          {SCENES.map(({ id, Component }, index) => (
+            <section
+              key={id}
+              data-scene={index}
+              className={index === 4 ? "scene-wrapper scene-wrapper--full" : "scene-wrapper"}
+              aria-label={nav.sceneLabels[index]}
+            >
+              <Component />
+            </section>
+          ))}
+        </div>
+        {!hideChrome && (
+          <SceneNavigator
+            labels={nav.sceneLabels}
+            activeScene={nav.activeScene}
+            onNavigate={nav.scrollToScene}
+          />
+        )}
       </div>
-      {!hideChrome && (
-        <SceneNavigator
-          labels={nav.sceneLabels}
-          activeScene={nav.activeScene}
-          onNavigate={nav.scrollToScene}
-        />
-      )}
     </PresentationProvider>
   );
 };

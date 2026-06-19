@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { usePresentationTheme } from "@/hooks/usePresentationTheme";
 
 type VnLogoProps = {
   variant?: "light" | "dark" | "auto";
@@ -27,8 +28,10 @@ export const VnLogo = ({
   className,
   priority = false,
 }: VnLogoProps) => {
+  const { isV2 } = usePresentationTheme();
   const displayWidth = Math.round(width * cropScale);
   const displayHeight = Math.round(height * cropScale);
+  const src = isV2 ? "/assets/vn-logo-v2.png" : "/assets/vn-logo-transparent.png";
 
   return (
     <span
@@ -36,10 +39,10 @@ export const VnLogo = ({
         "inline-flex shrink-0 items-center justify-center",
         className,
       )}
-      style={{ width: displayWidth, minHeight: height * cropScale }}
+      style={{ width: displayWidth, height: displayHeight }}
     >
       <Image
-        src="/assets/vn-logo-transparent.png"
+        src={src}
         alt="VN Modulhaus"
         width={displayWidth}
         height={displayHeight}
@@ -47,7 +50,7 @@ export const VnLogo = ({
         priority={priority}
         className={cn(
           "h-auto max-w-full object-contain object-center",
-          variantClass[variant],
+          !isV2 && variantClass[variant],
         )}
         style={{
           width: displayWidth,

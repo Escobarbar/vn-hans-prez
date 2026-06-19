@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext } from "react";
+import type { PresentationTheme } from "@/lib/presentation-theme";
 
 type PresentationContextValue = {
   activeScene: number;
@@ -12,6 +13,7 @@ type PresentationContextValue = {
   exportMode: boolean;
   exportInstant: boolean;
   hideChrome: boolean;
+  theme: PresentationTheme;
 };
 
 const PresentationContext = createContext<PresentationContextValue | null>(null);
